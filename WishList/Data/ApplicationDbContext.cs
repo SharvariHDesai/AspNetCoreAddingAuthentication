@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WishList.Models;
+﻿using WishList.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace WishList.Data
 {
