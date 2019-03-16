@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WishList.Models;
-using WishList.Models.AccountsViewModels;
+using WishList.Models.AccountViewModels;
 namespace WishList.Controllers
 {
     [Authorize]
