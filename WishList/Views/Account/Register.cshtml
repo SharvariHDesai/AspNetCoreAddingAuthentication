@@ -1,20 +1,22 @@
-﻿<h3>Register New User</h3>
+﻿
+@model WishList.Models.AccountsViewModels.RegisterViewModel
+<h3>Register New User</h3>
 <form asp-action="Register">
     <div class="text-danger" asp-validation-summary="All"></div>
     <div>
-        <label asp-for ="Email"/>
+        <label asp-for="Email" />
         <br />
-        <input asp-for = "Email" />
+        <input asp-for="Email" />
     </div>
     <div>
-        <label asp-for = "Password"></label>
+        <label asp-for="Password"></label>
         <br />
-        <input asp-for = "Password" />
+        <input asp-for="Password" />
     </div>
     <div>
-        <label asp-for = "ConfirmPassword"/>
+        <label asp-for="ConfirmPassword" />
         <br />
-        <input asp-for = "ConfirmPassword" />
+        <input asp-for="ConfirmPassword" />
     </div>
     <div>
         <button type="submit">Register User</button>

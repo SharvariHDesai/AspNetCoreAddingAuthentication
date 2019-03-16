@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WishList.Models;
-using WishList.Models.AccountsViewModel;
+using WishList.Models.AccountsViewModels;
 namespace WishList.Controllers
 {
     [Authorize]
@@ -17,7 +16,7 @@ namespace WishList.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-        [HttpGet]
+        [HttpGet, AllowAnonymous]
         public IActionResult Register()
         {
             return View("Register");
