@@ -24,8 +24,8 @@ namespace WishList.Controllers
         [HttpPost,AllowAnonymous]
         public IActionResult Register(RegisterViewModel model)
         {
-            if(ModelState.IsValid)
-            {
+            if (!ModelState.IsValid)
+             return View("Register", model);
               var result = _userManager.CreateAsync(new ApplicationUser() { UserName = model.Email, Email = model.Email }, model.Password).Result;
               if(!result.Succeeded)
                 {
@@ -35,13 +35,8 @@ namespace WishList.Controllers
                     }
                     return View("Register", model);
                 }
-                return  RedirectToAction("HomeController.Index");
-            }
-            else
-            {
-                return View("Register", model);
-            }
-           
+            return RedirectToAction("HomeController.Index");
+        }
         }
     }
-}
+
