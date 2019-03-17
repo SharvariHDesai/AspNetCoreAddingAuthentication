@@ -48,7 +48,7 @@ namespace WishList.Controllers
         {
             if (!ModelState.IsValid)
                 return View("Login", model);
-            var result = _signInManager.PasswordSignInAsync(new ApplicationUser() { UserName = model.Email, Email = model.Email }, model.Password, false, false).Result;
+            var result = _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false).Result;
             if(!result.Succeeded)
             {
                 ModelState.AddModelError("", "Invalid login attempt.");
@@ -56,7 +56,7 @@ namespace WishList.Controllers
             return RedirectToAction("Index", "Item");
         }
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult LogOut()
+        public IActionResult Logout()
         {
             _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
