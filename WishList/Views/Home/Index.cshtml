@@ -1,9 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using WishList.Models;
-@inject SignInManager <ApplicationUser>
-    SignInManager;
+@inject SignInManager<ApplicationUser> SignInManager
 
-    @if (SignInManager)
+    @if (SignInManager.IsSignedIn(User))
     {
         <div>
             <form asp-action="Logout" asp-controller="Account" method="post">
