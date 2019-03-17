@@ -53,13 +53,13 @@ namespace WishList.Controllers
             {
                 ModelState.AddModelError("", "Invalid login attempt.");
             }
-            return RedirectToAction("Item", "Index");
+            return RedirectToAction("Index", "Item");
         }
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult LogOut()
         {
             _signInManager.SignOutAsync();
-            return RedirectToAction("Home", "Index");
+            return RedirectToAction("Index", "Home");
         }
     }
     }
