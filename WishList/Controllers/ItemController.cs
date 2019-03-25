@@ -49,7 +49,7 @@ namespace WishList.Controllers
             var item = _context.Items.FirstOrDefault(e => e.Id == id);
             if(item.User != user)
                 {
-                   Unauthorized();
+                  return Unauthorized();
                  }
             _context.Items.Remove(item);
             _context.SaveChanges();
